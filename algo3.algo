@@ -1,0 +1,39 @@
+// Insertion Sort
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+
+        arr[j + 1] = key;
+    }
+}
+
+// Dot Product Calculation
+function dotProduct(v1, v2) {
+    if (v1.length !== v2.length) {
+        return NaN;
+    }
+
+    let dot = 0;
+    for (let i = 0; i < v1.length; i++) {
+        dot += v1[i] * v2[i];
+    }
+
+    return dot;
+}
+
+// Algorithm for Checking if Two Vectors are Orthogonal
+function checkOrthogonality(v1, v2) {
+    const dot = dotProduct(v1, v2);
+
+    if (dot === 0) {
+        console.log("v1 and v2 are orthogonal");
+    } else {
+        console.log("v1 and v2 are not orthogonal");
+    }
+}
